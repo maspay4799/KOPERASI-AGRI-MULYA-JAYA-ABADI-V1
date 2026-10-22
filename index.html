@@ -30,20 +30,30 @@
             align-items: center;
             gap: 20px;
         }
+        
+        /* Animasi Simpel Bergerak untuk Judul Teks */
+        @keyframes gerakSimpel {
+            0% { transform: scale(1); opacity: 0.95; }
+            50% { transform: scale(1.02); opacity: 1; text-shadow: 0 0 10px rgba(255, 235, 59, 0.4); }
+            100% { transform: scale(1); opacity: 0.95; }
+        }
         .header-title {
             color: var(--highlight);
             font-size: 1.4rem;
             font-weight: bold;
             letter-spacing: 1px;
-            text-align: left;
+            text-align: center;
             flex-grow: 1;
+            animation: gerakSimpel 3s infinite ease-in-out;
         }
+
         .header-right {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        /* Efek Animasi Bergerak / Berdenyut & Ukuran Logo Lebih Besar */
+        
+        /* Animasi Berdenyut untuk Logo di Kanan */
         @keyframes berdenyut {
             0% { transform: scale(1); box-shadow: 0 0 12px rgba(76, 175, 80, 0.4); }
             50% { transform: scale(1.08); box-shadow: 0 0 25px rgba(76, 175, 80, 0.9); }
@@ -57,6 +67,7 @@
             border: 3px solid var(--bright-green);
             animation: berdenyut 2.5s infinite ease-in-out;
         }
+        
         .home-btn {
             background: var(--accent-green);
             color: white;
@@ -125,9 +136,9 @@
 
     <header>
         <a href="index.html" class="home-btn">🏠 BERANDA</a>
+        <!-- Judul Koperasi dengan Animasi Bergerak Simpel -->
         <div class="header-title">KOPERASI KONSUMEN AGRI MULYA JAYA ABADI</div>
         <div class="header-right">
-            <!-- LOGO DIPERBESAR DAN DI POSISI KANAN -->
             <img src="LOGO.jpeg" alt="Logo Koperasi" class="logo-animasi" onerror="this.onerror=null; this.src='LOGO.JPG'; if(this.src=='LOGO.JPG') { this.onerror=function(){this.src='logo.png';}; this.src='LOGO.png'; }">
         </div>
     </header>
@@ -160,44 +171,3 @@
 
             <!-- Kolom 3: Transaksi Umum -->
             <div class="menu-card">
-                <div class="menu-card-header">* TRANSAKSI UMUM</div>
-                <ul class="menu-list">
-                    <li><a href="penerimaan-lain.pdf" target="_blank">PENERIMAAN LAIN</a></li>
-                    <li><a href="pengeluaran.pdf" target="_blank">PENGELUARAN</a></li>
-                    <li><a href="pembelian-penjualan-aset.pdf" target="_blank">PEMBELIAN / PENJUALAN ASET</a></li>
-                </ul>
-            </div>
-
-            <!-- Kolom 4: Laporan Keuangan -->
-            <div class="menu-card">
-                <div class="menu-card-header">* LAPORAN KEUANGAN</div>
-                <ul class="menu-list">
-                    <li><a href="report-bulanan.pdf" target="_blank">REPORT BULANAN</a></li>
-                    <li><a href="report-tahunan.pdf" target="_blank">REPORT TAHUNAN</a></li>
-                    <li><a href="neraca.pdf" target="_blank">NERACA</a></li>
-                    <li><a href="arus-kas.pdf" target="_blank">ARUS KAS</a></li>
-                </ul>
-            </div>
-
-            <!-- Kolom 5: Daftar Simpanan -->
-            <div class="menu-card">
-                <div class="menu-card-header">* DAFTAR SIMPANAN</div>
-                <ul class="menu-list">
-                    <li><a href="simpanan-pokok.pdf" target="_blank">SIMPANAN POKOK</a></li>
-                    <li><a href="simpanan-wajib.pdf" target="_blank">SIMPANAN WAJIB</a></li>
-                    <li><a href="tabungan-anggota.pdf" target="_blank">TABUNGAN ANGGOTA</a></li>
-                </ul>
-            </div>
-
-            <!-- Kolom 6: Usaha Produksi -->
-            <div class="menu-card">
-                <div class="menu-card-header">* USAHA PRODUKSI</div>
-                <ul class="menu-list">
-                    <li><a href="pembelian-produksi.pdf" target="_blank">PEMBELIAN PRODUKSI</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
