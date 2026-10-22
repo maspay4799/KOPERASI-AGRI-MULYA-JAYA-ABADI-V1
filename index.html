@@ -28,10 +28,30 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        /* Efek Animasi Bergerak / Berdenyut untuk Logo */
+        @keyframes berdenyut {
+            0% { transform: scale(1); box-shadow: 0 0 10px rgba(76, 175, 80, 0.4); }
+            50% { transform: scale(1.08); box-shadow: 0 0 22px rgba(76, 175, 80, 0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 10px rgba(76, 175, 80, 0.4); }
+        }
+        .logo-animasi {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--bright-green);
+            animation: berdenyut 2.5s infinite ease-in-out;
         }
         .header-title {
             color: var(--highlight);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: bold;
             letter-spacing: 1px;
             text-align: center;
@@ -49,6 +69,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            white-space: nowrap;
         }
         .home-btn:hover {
             background: var(--bright-green);
@@ -103,7 +124,11 @@
 <body>
 
     <header>
-        <a href="index.html" class="home-btn">🏠 BERANDA</a>
+        <div class="header-left">
+            <!-- LOGO BERGERAK / BERDENYUT -->
+            <img src="LOGO.JPEG" alt="Logo Koperasi" class="logo-animasi" onerror="this.onerror=null; this.src='LOGO.JPG';">
+            <a href="index.html" class="home-btn">🏠 BERANDA</a>
+        </div>
         <div class="header-title">KOPERASI KONSUMEN AGRI MULYA JAYA ABADI</div>
     </header>
 
