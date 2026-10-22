@@ -30,32 +30,32 @@
             align-items: center;
             gap: 20px;
         }
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        /* Efek Animasi Bergerak / Berdenyut untuk Logo */
-        @keyframes berdenyut {
-            0% { transform: scale(1); box-shadow: 0 0 10px rgba(76, 175, 80, 0.4); }
-            50% { transform: scale(1.08); box-shadow: 0 0 22px rgba(76, 175, 80, 0.8); }
-            100% { transform: scale(1); box-shadow: 0 0 10px rgba(76, 175, 80, 0.4); }
-        }
-        .logo-animasi {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--bright-green);
-            animation: berdenyut 2.5s infinite ease-in-out;
-        }
         .header-title {
             color: var(--highlight);
             font-size: 1.4rem;
             font-weight: bold;
             letter-spacing: 1px;
-            text-align: center;
+            text-align: left;
             flex-grow: 1;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        /* Efek Animasi Bergerak / Berdenyut & Ukuran Logo Lebih Besar */
+        @keyframes berdenyut {
+            0% { transform: scale(1); box-shadow: 0 0 12px rgba(76, 175, 80, 0.4); }
+            50% { transform: scale(1.08); box-shadow: 0 0 25px rgba(76, 175, 80, 0.9); }
+            100% { transform: scale(1); box-shadow: 0 0 12px rgba(76, 175, 80, 0.4); }
+        }
+        .logo-animasi {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--bright-green);
+            animation: berdenyut 2.5s infinite ease-in-out;
         }
         .home-btn {
             background: var(--accent-green);
@@ -124,12 +124,12 @@
 <body>
 
     <header>
-        <div class="header-left">
-            <!-- LOGO BERGERAK / BERDENYUT -->
-            <img src="LOGO.jpeg" alt="Logo Koperasi" class="logo-animasi" onerror="this.onerror=null; this.src='LOGO.JPG'; if(this.src=='LOGO.JPG') { this.onerror=function(){this.src='logo.png';}; this.src='LOGO.png'; }">
-            <a href="index.html" class="home-btn">🏠 BERANDA</a>
-        </div>
+        <a href="index.html" class="home-btn">🏠 BERANDA</a>
         <div class="header-title">KOPERASI KONSUMEN AGRI MULYA JAYA ABADI</div>
+        <div class="header-right">
+            <!-- LOGO DIPERBESAR DAN DI POSISI KANAN -->
+            <img src="LOGO.jpeg" alt="Logo Koperasi" class="logo-animasi" onerror="this.onerror=null; this.src='LOGO.JPG'; if(this.src=='LOGO.JPG') { this.onerror=function(){this.src='logo.png';}; this.src='LOGO.png'; }">
+        </div>
     </header>
 
     <div class="container">
